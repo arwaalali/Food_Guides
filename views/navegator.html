@@ -1,0 +1,81 @@
+
+
+<section  ng-controller="MarkerAnimationCtrl"> 
+  <div class="amarrilo row">
+       <div class="mismas col-sm-3">
+          <div class="dropdown">
+            <button class="" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Tipo de cocina</button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><input  type="checkbox" value="mediterraneo" ng-click="setQuery('mediterraneo')">Mediterraneo</input></li>
+                <li><input  type="checkbox" value="burger" ng-click="setQuery('burger')">Burger</input></li>        
+                <li><input  type="checkbox" value="Mexicano" ng-click="setQuery('mexicano')">Mexicano</input></li>
+                <li><input  type="checkbox" value="Creativa Fusión" ng-click="setQuery('creativa fusión')">Creativa Fusión</input></li> 
+                <li><input  type="checkbox" value="Asiatica" ng-click="setQuery('asiatica')">Asiatica</input></li>
+                <li><input  type="checkbox" value="Vegetales y vegetarianos" ng-click="setQuery('Vegetales y vegetarianos')">Vegetales y vegetarianos</input></li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="mismas col-sm-3">
+          <div class="dropdown">
+            <button  type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Ocasiones</button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><input  type="checkbox" value="Brunch & desayunos" ng-click="setQuery('brunch & desayunos')">Brunch & desayunos</input></li>
+                <li><input  type="checkbox" value="Pareja" ng-click="setQuery('pareja')">Pareja</input></li>        
+                <li><input  type="checkbox" value="Con amigos" ng-click="setQuery('con amigos')">Con amigos</input></li>
+                <li><input  type="checkbox" value="Informal" ng-click="setQuery('informal')">informal</input></li> 
+                <li><input  type="checkbox" value="Con niños" ng-click="setQuery('con niños')">Con niños</input></li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="mismas col-sm-3">
+          <div class="dropdown">
+            <button  type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Localización</button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><input  type="checkbox" value="Chamberí" ng-click="setQuery('Chamberí')">Chamberí</input></li>
+                <li><input  type="checkbox" value="La latina" ng-click="setQuery('La latina')">La latina</input></li>        
+                <li><input  type="checkbox" value="Chueca" ng-click="setQuery('Chueca')">Chueca</input></li>
+                <li><input  type="checkbox" value="Malasaña" ng-click="setQuery('Malasaña')">Malasaña</input></li> 
+                <li><input  type="checkbox" value="Arturo Soria" ng-click="setQuery('mediterraneo')">Arturo Soria</input></li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="mismas col-sm-3">
+          <div class="dropdown">
+            <button  type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Precio</button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><input  type="checkbox" value="Menos de 20" ng-click="setQuery('Menos de 20')">Menos de 20€</input></li>
+                <li><input  type="checkbox" value="De 20 a 30" ng-click="setQuery('De 20€ a 30€')">De 20€ a 30€</input></li>        
+                <li><input  type="checkbox" value="Entre 30 y 40" ng-click="setQuery('Entre 30 y 40')">Entre 30€ y 40€</input></li>
+                <li><input  type="checkbox" value="Mas de 40" ng-click="setQuery('Mas de 40')">Mas de 40€</input></li> 
+              </ul> 
+        </div> 
+    </div>
+
+</div>
+</div>
+
+<div class="row">
+   <div class="slow col-sm-3">
+      <div id="Layer1" style="width:400px; height:600px; overflow: scroll;">
+         <div class="columns">
+          <band-directive ng-repeat="place in places | filter: query | filter: name" class="sample_show-hide"></band-directive>
+        </div>
+  
+      </div>
+    </div>
+
+
+    
+  <div class="col-sm-9">
+    <ng-map  zoom="14" center="40.428723, -3.704264" style="width: 1200px; height:600px">
+      <div ng-repeat="place in places | filter: query">
+        <marker position="{{place.lat}}, {{place.long}}" title ="{{place.name}}, {{place.direccion}}, {{place.contact}}, {{place.web}}"
+         animation="DROP" icon="./img/logo_yellow.png">   
+        </marker>
+      </div>
+   </ng-map>
+  </div>
+</div>

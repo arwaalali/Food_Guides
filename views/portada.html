@@ -1,0 +1,64 @@
+<div class="port row">
+    <div id="hero">
+         <div class="carousel-inner">
+          <div class="item active">
+            <div class="textura"> </div>
+              <img class="photo" src="img/guide.jpg" alt="...">   
+                <div class="carousel-caption">
+                <h1 class="foodguides">FOOD GUIDES</h1>
+                <p class="white2">¿A qué cafetería sueles ir? ¿En qué restaurante sirven el mejor desayuno? Food Guide ayuda a millones de personas a sentirse como en casa localizando los mejores restaurantes nombrados en los blogs gastronomicos</p>
+                <a href="index1.html" class="btn btn-fill btn-large btn-margin-right">Ir al mapa</a> 
+            </div>
+          </div>
+       </div>
+       </div>
+    </div>
+</div>
+       
+
+
+<div class="row">
+  <div class="def col-sm-12">
+    <div class="def">      
+      <h2>Localiza los restaurantes citados en los blogs</h2>
+      <p class="sombreado">A qué cafetería sueles ir? ¿En qué restaurante sirven el mejor desayuno? Food Guide ayuda a millones de personas a sentirse como en casa localizando los mejores restaurantes nombrados en los blogs gastronomicos</p>
+    </div>
+  </div>
+</div> 
+
+
+<div class="row">
+  <div class="yellow col-sm-4">
+      <h2 class="white"> Inicia sesión</h2>
+      <p class="white">Inicia sesión o registrate para poder guardar tus restaurantes</p>
+      <img src="img/noun_46892_ccwhite.png">
+  </div>
+  <div class="row">
+    <div class="orange col-sm-4">
+        <h2 class="white">Localiza</h2>
+        <p class="white">Localiza en el mapa tu restaurante para cada ocasión</p>
+        <img src="img/search.png">
+    </div>
+    <div class="row">
+  <div class="pink col-sm-4">
+      <h2 class="white">Crea tu lista</h2>
+      <p class="white">Crea diferentes listas, guardando tus reataurantes</p>
+      <img src="img/lista.png">
+  </div>
+</div>
+
+
+
+
+<section  ng-controller="MarkerAnimationCtrl"> 
+            <ng-map zoom="15" center="40.423440, -3.699725" style="height:300px">
+              <div ng-repeat="place in places | filter: query">
+                <marker position="{{place.lat}}, {{place.long}}" 
+                 animation="DROP" icon="./img/logo_yellow.png">   
+                </marker>
+              </div>
+           </ng-map>
+</section>
+
+
+
