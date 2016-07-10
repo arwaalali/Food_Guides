@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<base href="/">
+<meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./header-animated/css/bootstrap.min.css">
+  <link rel="icon" type="img/logo-white.png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="stylesheet" href="./header-animated/css/jquery.fancybox.css">
+  <link rel="stylesheet" href="./header-animated/css/flexslider.css">
+  <link rel="stylesheet" href="./stylesheet/styles.css">
+  <link rel="stylesheet" href="./header-animated/css/etline-font.css">
+  <link rel="stylesheet" href="./header-animated/bower_components/animate.css/animate.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.28/css/bulma.min.css">
+	<title>RESTAURANTES | MADRID</title>
+
+</head>
+<body>
+
+  <div class="headerp" ng-header-section></div>
+
+
+
+	<div class="row">
+  <div class="desta col-sm-12">
+    <div>     
+      <h1 class="destacados">DESTACADOS ESTA SEMANA</h1>
+    </div>
+  </div>
+</div> 
+
+<section  ng-controller="MarkerAnimationCtrl"> 
+  <div class=" row">
+       <div class="nav-toggle col-sm-+">
+          <div class="dropdown">
+            <button  type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Tipo de cocina</button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><input  type="checkbox" value="mediterraneo" ng-click="setQuery('mediterraneo')">Mediterraneo</input></li>
+                <li><input  type="checkbox" value="burger" ng-click="setQuery('burger')">Burger</input></li>        
+                <li><input  type="checkbox" value="Mexicano" ng-click="setQuery('mexicano')">Mexicano</input></li>
+                <li><input  type="checkbox" value="Creativa Fusión" ng-click="setQuery('creativa fusión')">Creativa Fusión</input></li> 
+                <li><input  type="checkbox" value="Asiatica" ng-click="setQuery('asiatica')">Asiatica</input></li>
+                <li><input  type="checkbox" value="Vegetales y vegetarianos" ng-click="setQuery('Vegetales y vegetarianos')">Vegetales y vegetarianos</input></li>
+              </ul>
+          </div>
+        </div>
+
+  </div>
+
+
+  <div class="columns" style="flex-wrap:wrap">
+     <gallery-directive ng-repeat="place in places | filter: query | filter: name" class="sample_show-hide"></gallery-directive>
+ </div>
+ 
+  
+  </section>
+
+
+  <div class="modalsec" ng-modal-section></div> 
+  <div class="footerp" ng-footer-section style="background-color:#FFFF66; "></div>
+
+  
+
+</body>
+
+  <script type="text/javascript" src="./lib/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/angular.min.js"></script>
+  <script type="text/javascript" src="./lib/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="./script/app.js"></script>
+  <script type="text/javascript" src="./script/directivas.js"></script>
+  <script type="text/javascript" src="./script/controller.js"></script>
+  <script type="text/javascript" src="./script/header.js"></script>
+  <script type="text/javascript" src="./script/navigator.js"></script>
+  <script src="./lib/ng-map.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+</html>
